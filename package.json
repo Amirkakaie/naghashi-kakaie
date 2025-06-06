@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "daisyui": "^5.0.43"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.8",
+    "tailwindcss": "^4.1.8"
+  },
+  "name": "naghshi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "npx @tailwindcss/cli -i ./src/tailwind.css -o ./dist/style.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
