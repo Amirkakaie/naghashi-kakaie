@@ -147,25 +147,5 @@
     </div>
 
     <script src="public/script.js"></script>
-    <script>
-        const contactForm = document.getElementById('contact-form');
-        const formConfirmation = document.getElementById('form-confirmation');
-
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Prevent actual submission
-
-            // Hide the form and show the confirmation message
-            contactForm.classList.add('hidden');
-            formConfirmation.classList.remove('hidden');
-
-            // Optional: You can reset the form after a delay
-            setTimeout(() => {
-                contactForm.reset();
-                // Optionally hide the confirmation and show the form again
-                // formConfirmation.classList.add('hidden');
-                // contactForm.classList.remove('hidden');
-            }, 5000); // 5 seconds
-        });
-    </script>
 </body>
 </html>

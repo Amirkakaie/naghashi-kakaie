@@ -146,6 +146,38 @@
             </div>
         </section>
 
+        <!-- Why Choose Us Section -->
+        <section class="py-20 bg-slate-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-slate-800 reveal">چرا نقاشی مدرن؟</h2>
+                    <p class="text-slate-600 mt-2 reveal" style="transition-delay: 0.2s;">ما بهترین انتخاب برای پروژه بعدی شما هستیم</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div class="p-6 reveal" style="transition-delay: 0.1s;">
+                        <div class="text-blue-500 mb-4"><i class="fas fa-award text-5xl"></i></div>
+                        <h3 class="text-2xl font-bold mb-3">۲۸ سال تجربه</h3>
+                        <p class="text-slate-600">تخصص و سابقه‌ای درخشان در انواع پروژه‌های نقاشی.</p>
+                    </div>
+                    <div class="p-6 reveal" style="transition-delay: 0.3s;">
+                        <div class="text-blue-500 mb-4"><i class="fas fa-check-circle text-5xl"></i></div>
+                        <h3 class="text-2xl font-bold mb-3">متریال درجه یک</h3>
+                        <p class="text-slate-600">تعهد به استفاده از بهترین و باکیفیت‌ترین برندهای رنگ.</p>
+                    </div>
+                    <div class="p-6 reveal" style="transition-delay: 0.5s;">
+                        <div class="text-blue-500 mb-4"><i class="fas fa-clock text-5xl"></i></div>
+                        <h3 class="text-2xl font-bold mb-3">تحویل به موقع</h3>
+                        <p class="text-slate-600">احترام به زمان شما و تحویل پروژه در موعد مقرر.</p>
+                    </div>
+                    <div class="p-6 reveal" style="transition-delay: 0.7s;">
+                        <div class="text-blue-500 mb-4"><i class="fas fa-headset text-5xl"></i></div>
+                        <h3 class="text-2xl font-bold mb-3">مشاوره رایگان</h3>
+                        <p class="text-slate-600">همراهی و ارائه مشاوره تخصصی از ابتدا تا انتهای پروژه.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Services Section -->
         <section id="services" class="py-20 bg-white">
             <div class="container mx-auto px-6">
@@ -291,6 +323,20 @@
                 </div>
             </div>
         </section>
+
+        <!-- Brand Logos Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h3 class="text-center text-2xl font-bold text-slate-600 mb-8">برخی از برندهایی که با آن‌ها کار می‌کنیم</h3>
+                <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+                    <img src="https://via.placeholder.com/120x60/CCCCCC/FFFFFF?text=Brand+1" alt="Brand 1" class="h-10 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all">
+                    <img src="https://via.placeholder.com/120x60/CCCCCC/FFFFFF?text=Brand+2" alt="Brand 2" class="h-10 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all">
+                    <img src="https://via.placeholder.com/120x60/CCCCCC/FFFFFF?text=Brand+3" alt="Brand 3" class="h-10 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all">
+                    <img src="https://via.placeholder.com/120x60/CCCCCC/FFFFFF?text=Brand+4" alt="Brand 4" class="h-10 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all">
+                    <img src="https://via.placeholder.com/120x60/CCCCCC/FFFFFF?text=Brand+5" alt="Brand 5" class="h-10 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all">
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -311,33 +357,5 @@
     </div>
 
     <script src="public/script.js"></script>
-    <script>
-        // Scroll Animation Logic
-        const revealElements = document.querySelectorAll('.reveal');
-        const processSection = document.getElementById('process-section');
-        const processLine = document.getElementById('process-line');
-
-        const revealOnScroll = () => {
-            const windowHeight = window.innerHeight;
-
-            revealElements.forEach(el => {
-                const elementTop = el.getBoundingClientRect().top;
-                if (elementTop < windowHeight - 100) {
-                    el.classList.add('visible');
-                }
-            });
-
-            if (processSection && processLine) {
-                const elementTop = processSection.getBoundingClientRect().top;
-                if (elementTop < windowHeight - 200) {
-                    processLine.style.width = '100%';
-                }
-            }
-        };
-
-        window.addEventListener('scroll', revealOnScroll);
-        // Initial check on load
-        revealOnScroll();
-    </script>
 </body>
 </html>
