@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="گالری نمونه کارهای انجام شده توسط تیم نقاشی مدرن. مشاهده پروژه‌های موفق ما در زمینه رنگ‌های پلاستیک، روغنی و اکریلیک.">
-    <meta name="keywords" content="گالری نمونه کار, نمونه کار نقاشی, پروژه های نقاشی ساختمان, تصاویر نقاشی خانه">
-    <title>گالری نمونه کارها | نقاشی ساختمان مدرن</title>
+    <meta name="description" content="آخرین مقالات و نوشته‌ها در وبلاگ نقاشی مدرن. نکات و ترفندهای دنیای رنگ و نقاشی ساختمان، انتخاب رنگ و نگهداری.">
+    <meta name="keywords" content="وبلاگ نقاشی, مقالات نقاشی ساختمان, نکات نقاشی, انتخاب رنگ, دکوراسیون داخلی">
+    <title>وبلاگ | نقاشی ساختمان مدرن</title>
     <link href="../dist/style.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
@@ -15,7 +15,6 @@
         .dropdown-menu { opacity: 0; transform: translateY(10px); transition: opacity 0.3s ease, transform 0.3s ease; visibility: hidden; }
         #mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
         .mobile-submenu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-in-out; }
-        .gallery-item { transition: transform 0.3s, opacity 0.3s; }
     </style>
 </head>
 <body class="bg-slate-100 text-slate-800">
@@ -37,6 +36,7 @@
                         <a href="services/multicolor-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50">مولتی‌کالر</a>
                     </div>
                 </div>
+                <a href="gallery.html" class="text-slate-600 hover:text-blue-500 transition">گالری</a>
                 <a href="blog.html" class="text-slate-600 hover:text-blue-500 transition">وبلاگ</a>
                 <a href="about.html" class="text-slate-600 hover:text-blue-500 transition">درباره ما</a>
                 <a href="contact.html" class="text-slate-600 hover:text-blue-500 transition">تماس با ما</a>
@@ -57,6 +57,7 @@
                     <a href="services/multicolor-paint.html" class="block py-2 px-8">مولتی‌کالر</a>
                 </div>
             </div>
+            <a href="gallery.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50 border-b">گالری</a>
             <a href="blog.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50 border-b">وبلاگ</a>
             <a href="about.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50 border-b">درباره ما</a>
             <a href="contact.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">تماس با ما</a>
@@ -67,38 +68,30 @@
     <main class="py-16">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <h1 class="text-4xl font-bold text-slate-800">گالری نمونه کارها</h1>
-                <p class="text-slate-600 mt-2">کیفیت کار ما را در عمل ببینید</p>
+                <h1 class="text-4xl font-bold text-slate-800">آخرین مقالات و نوشته‌ها</h1>
+                <p class="text-slate-600 mt-2">نکات و ترفندهای دنیای رنگ و نقاشی ساختمان</p>
             </div>
 
-            <!-- Filter Buttons -->
-            <div id="filter-buttons" class="flex justify-center space-x-4 space-x-reverse mb-10">
-                <button class="filter-btn bg-blue-500 text-white py-2 px-4 rounded-lg" data-filter="all">همه</button>
-                <button class="filter-btn bg-white text-slate-700 py-2 px-4 rounded-lg" data-filter="plastic">رنگ پلاستیک</button>
-                <button class="filter-btn bg-white text-slate-700 py-2 px-4 rounded-lg" data-filter="oil">رنگ روغنی</button>
-                <button class="filter-btn bg-white text-slate-700 py-2 px-4 rounded-lg" data-filter="acrylic">رنگ اکریلیک</button>
-            </div>
+            <!-- Blog Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post Card -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                    <a href="blog/post1.html" class="block">
+                        <img src="https://images.unsplash.com/photo-1512412936952-48ea23381183?q=80&w=1200&auto=format&fit=crop" alt="انتخاب رنگ مناسب" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-blue-500 font-semibold">نکات نقاشی</p>
+                            <h3 class="text-xl font-bold mt-2 mb-3 text-slate-800 group-hover:text-blue-600 transition-colors">چگونه بهترین رنگ را برای اتاق خواب انتخاب کنیم؟</h3>
+                            <p class="text-slate-600">انتخاب رنگ مناسب برای اتاق خواب می‌تواند تاثیر زیادی بر کیفیت خواب و آرامش شما داشته باشد. در این مقاله به بررسی روانشناسی رنگ‌ها و...</p>
+                            <div class="mt-4 flex items-center text-sm text-slate-500">
+                                <i class="fas fa-calendar-alt ml-2"></i>
+                                <span>25 تیر 1403</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
 
-            <!-- Gallery Grid -->
-            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <div class="gallery-item" data-category="plastic">
-                    <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=800" alt="نمونه کار پلاستیک" class="rounded-lg shadow-lg object-cover w-full h-full">
-                </div>
-                <div class="gallery-item" data-category="oil">
-                    <img src="https://images.unsplash.com/photo-1588294151482-db092800b9d2?q=80&w=800" alt="نمونه کار روغنی" class="rounded-lg shadow-lg object-cover w-full h-full">
-                </div>
-                <div class="gallery-item" data-category="acrylic">
-                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800" alt="نمونه کار اکریلیک" class="rounded-lg shadow-lg object-cover w-full h-full">
-                </div>
-                <div class="gallery-item" data-category="plastic">
-                    <img src="https://images.unsplash.com/photo-1599696848652-f0ff23349698?q=80&w=800" alt="نمونه کار پلاستیک" class="rounded-lg shadow-lg object-cover w-full h-full">
-                </div>
-                 <div class="gallery-item" data-category="oil">
-                    <img src="https://images.unsplash.com/photo-1599422889326-a84a6a51a812?q=80&w=800" alt="نمونه کار روغنی" class="rounded-lg shadow-lg object-cover w-full h-full">
-                </div>
-                <div class="gallery-item" data-category="acrylic">
-                    <img src="https://images.unsplash.com/photo-1598363475344-9a8b19154483?q=80&w=800" alt="نمونه کار اکریلیک" class="rounded-lg shadow-lg object-cover w-full h-full">
-                </div>
+                <!-- Add more blog post cards here -->
+
             </div>
         </div>
     </main>
@@ -116,11 +109,5 @@
     </div>
 
     <script src="public/script.js"></script>
-
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-        <button id="lightbox-close" class="absolute top-4 right-4 text-white text-3xl">&times;</button>
-        <img id="lightbox-img" src="" alt="نمونه کار بزرگ شده" class="max-w-full max-h-full rounded-lg">
-    </div>
 </body>
 </html>
