@@ -89,13 +89,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contact-form');
     const formConfirmation = document.getElementById('form-confirmation');
     if (contactForm && formConfirmation) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            contactForm.classList.add('hidden');
-            formConfirmation.classList.remove('hidden');
-            setTimeout(() => {
-                contactForm.reset();
-            }, 5000);
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                if (response.ok) {
+                    contactForm.classList.add('hidden');
+                    formConfirmation.classList.remove('hidden');
+                    contactForm.reset();
+                } else {
+                    alert('خطا در ارسال پیام. لطفاً دوباره تلاش کنید.');
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert('یک خطای پیش‌بینی نشده رخ داد. لطفاً با پشتیبانی تماس بگیرید.');
+            }
         });
     }
 });

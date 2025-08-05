@@ -4,14 +4,16 @@
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.8",
+    "express": "^5.1.0",
     "tailwindcss": "^4.1.8"
   },
   "name": "naghshi",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" : "npx @tailwindcss/cli -i ./src/tailwind.css -o ./dist/style.css --watch"
+    "dev": "npx @tailwindcss/cli -i ./src/tailwind.css -o ./dist/style.css --watch"
   },
   "author": "",
   "license": "ISC",

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل ادمین | صندوق پیام‌ها</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap');
+        body { font-family: 'Vazirmatn', sans-serif; background-color: #f1f5f9; }
+        .message-card {
+            border-right: 4px solid #3b82f6;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .message-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <div id="login-section" class="min-h-screen flex items-center justify-center bg-slate-200">
+        <div class="bg-white p-8 rounded-lg shadow-xl max-w-sm w-full text-center">
+            <h1 class="text-2xl font-bold mb-6">ورود به پنل ادمین</h1>
+            <input type="password" id="password" placeholder="رمز عبور را وارد کنید" class="w-full px-4 py-2 border rounded-md mb-4 text-center">
+            <button id="login-button" class="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition w-full">ورود</button>
+            <p id="error-message" class="text-red-500 mt-4 text-sm hidden">رمز عبور اشتباه است.</p>
+        </div>
+    </div>
+
+    <main id="admin-panel" class="container mx-auto px-6 py-8 hidden">
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-4xl font-bold text-slate-800">صندوق پیام‌ها</h1>
+            <a href="/" class="text-blue-600 hover:underline">بازگشت به سایت</a>
+        </div>
+
+        <div id="messages-container" class="space-y-6">
+            <!-- Messages will be loaded here dynamically -->
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginSection = document.getElementById('login-section');
+            const adminPanel = document.getElementById('admin-panel');
+            const passwordInput = document.getElementById('password');
+            const loginButton = document.getElementById('login-button');
+            const errorMessage = document.getElementById('error-message');
+            const messagesContainer = document.getElementById('messages-container');
+
+            // --- Simple hardcoded password ---
+            const ADMIN_PASSWORD = 'admin123';
+
+            loginButton.addEventListener('click', () => {
+                if (passwordInput.value === ADMIN_PASSWORD) {
+                    loginSection.classList.add('hidden');
+                    adminPanel.classList.remove('hidden');
+                    fetchAndDisplayMessages();
+                } else {
+                    errorMessage.classList.remove('hidden');
+                    passwordInput.focus();
+                }
+            });
+
+            passwordInput.addEventListener('keyup', (e) => {
+                if (e.key === 'Enter') {
+                    loginButton.click();
+                }
+            });
+
+            async function fetchAndDisplayMessages() {
+                try {
+                    const response = await fetch('/api/messages');
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    const messages = await response.json();
+
+                    if (messages.length === 0) {
+                        messagesContainer.innerHTML = '<p class="text-center text-slate-500">در حال حاضر هیچ پیامی وجود ندارد.</p>';
+                        return;
+                    }
+
+                    messagesContainer.innerHTML = ''; // Clear previous content
+                    messages.forEach(msg => {
+                        const messageCard = createMessageCard(msg);
+                        messagesContainer.appendChild(messageCard);
+                    });
+
+                } catch (error) {
+                    console.error('Failed to fetch messages:', error);
+                    messagesContainer.innerHTML = '<p class="text-center text-red-500">خطا در دریافت اطلاعات. لطفاً صفحه را رفرش کنید.</p>';
+                }
+            }
+
+            function createMessageCard(msg) {
+                const card = document.createElement('div');
+                card.className = 'message-card bg-white p-6 rounded-lg shadow-md';
+
+                const formattedDate = new Date(msg.date).toLocaleString('fa-IR', {
+                    year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
+                });
+
+                card.innerHTML = `
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-user-circle text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">${escapeHTML(msg.name || 'بدون نام')}</h3>
+                        </div>
+                        <span class="text-sm text-slate-500">${formattedDate}</span>
+                    </div>
+                    <div class="space-y-3 text-slate-700">
+                        <p><strong>شماره تماس:</strong> <a href="tel:${escapeHTML(msg.phone)}" class="text-blue-600 hover:underline">${escapeHTML(msg.phone)}</a></p>
+                        <p><strong>نوع خدمت:</strong> ${escapeHTML(msg['service-type'] || 'مشخص نشده')}</p>
+                        <hr class="my-3">
+                        <p><strong>متن پیام:</strong></p>
+                        <p class="whitespace-pre-wrap">${escapeHTML(msg.message || 'پیامی وجود ندارد')}</p>
+                    </div>
+                `;
+                return card;
+            }
+
+            function escapeHTML(str) {
+                if (typeof str !== 'string') return '';
+                return str.replace(/[&<>"']/g, function(match) {
+                    return {
+                        '&': '&amp;',
+                        '<': '&lt;',
+                        '>': '&gt;',
+                        '"': '&quot;',
+                        "'": '&#39;'
+                    }[match];
+                });
+            }
+        });
+    </script>
+</body>
+</html>
