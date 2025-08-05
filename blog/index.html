@@ -9,6 +9,31 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap');
         body { font-family: 'Vazirmatn', sans-serif; }
+
+        /* Desktop Dropdown Animation */
+        .dropdown-menu {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            visibility: hidden;
+        }
+        .group:hover .dropdown-menu {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+
+        /* Mobile Menu Animation */
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .mobile-submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 overflow-x-hidden">
@@ -94,5 +119,14 @@
     </footer>
 
     <script src="../public/script.js"></script>
+
+    <!-- New Mobile Call Button -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-sm z-50 flex justify-center">
+        <a href="tel:09190675003"
+           class="w-full text-center text-white font-bold py-4 rounded-lg bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 shadow-lg"
+           style="max-width: 370px;">
+            دریافت مشاوره فوری و رایگان
+        </a>
+    </div>
 </body>
 </html>
