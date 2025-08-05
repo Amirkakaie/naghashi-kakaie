@@ -1,26 +1,42 @@
-// Enhanced JavaScript for new features will be added here.
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile menu logic
+    // --- Mobile Menu Logic ---
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
 
     if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            // Toggle visibility by adjusting max-height
+            if (mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px') {
+                mobileMenu.style.maxHeight = '0px';
+            } else {
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+            }
         });
     }
 
-    // Dropdown menu logic
-    const servicesDropdownButton = document.getElementById('services-dropdown-button');
-    const servicesDropdownMenu = document.getElementById('services-dropdown-menu');
+    // --- Mobile Submenu Logic ---
+    const mobileSubmenuButton = document.getElementById('mobile-submenu-button');
+    const mobileSubmenu = document.getElementById('mobile-submenu');
 
-    if (servicesDropdownButton && servicesDropdownMenu) {
-        servicesDropdownButton.addEventListener('mouseenter', () => {
-            servicesDropdownMenu.classList.remove('hidden');
-        });
+    if (mobileSubmenuButton && mobileSubmenu) {
+        mobileSubmenuButton.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent the main menu from closing
+            const icon = mobileSubmenuButton.querySelector('i');
 
-        servicesDropdownButton.addEventListener('mouseleave', () => {
-            servicesDropdownMenu.classList.add('hidden');
+            // Toggle submenu visibility
+            if (mobileSubmenu.style.maxHeight && mobileSubmenu.style.maxHeight !== '0px') {
+                mobileSubmenu.style.maxHeight = '0px';
+                icon.classList.remove('rotate-180');
+            } else {
+                mobileSubmenu.style.maxHeight = mobileSubmenu.scrollHeight + 'px';
+                icon.classList.add('rotate-180');
+                // Adjust main menu height to accommodate the opened submenu
+                setTimeout(() => {
+                    mobileMenu.style.maxHeight = (mobileMenu.scrollHeight + mobileSubmenu.scrollHeight) + 'px';
+                }, 200); // Wait for submenu to open
+            }
         });
     }
+
+    // --- Desktop Dropdown (No JS needed for hover, handled by CSS) ---
 });

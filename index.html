@@ -9,7 +9,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap');
         body { font-family: 'Vazirmatn', sans-serif; }
-        /* Improved Dropdown with Animation */
+
+        /* Desktop Dropdown Animation */
         .dropdown-menu {
             opacity: 0;
             transform: translateY(10px);
@@ -21,9 +22,51 @@
             transform: translateY(0);
             visibility: visible;
         }
+
+        /* Mobile Menu Animation */
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .mobile-submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out;
+        }
+
+        /* Hero Animation */
+        @keyframes slideInUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-slideInUp {
+            animation: slideInUp 0.8s ease-out forwards;
+        }
+
+        /* Border animation for About Us section */
+        .animated-border {
+            position: relative;
+            padding: 1.5rem;
+            overflow: hidden;
+        }
+        .animated-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #3B82F6);
+            animation: animate-border-top 2s linear infinite;
+        }
+        @keyframes animate-border-top {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body class="bg-slate-50 text-slate-800 overflow-x-hidden">
 
     <!-- Header -->
     <header class="bg-white shadow-lg sticky top-0 z-50">
@@ -33,7 +76,6 @@
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-8 space-x-reverse">
                 <a href="index.html" class="text-slate-600 hover:text-blue-500 transition duration-300">خانه</a>
-                <!-- Services Dropdown using group-hover -->
                 <div class="relative group">
                     <button class="text-slate-600 hover:text-blue-500 transition duration-300 flex items-center py-2">
                         خدمات ما <i class="fas fa-chevron-down mr-2 text-xs transition-transform group-hover:rotate-180"></i>
@@ -55,25 +97,44 @@
             </button>
         </nav>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-            <a href="index.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">خانه</a>
-            <a href="services/plastic-paint.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">رنگ پلاستیک</a>
-            <a href="services/oil-paint.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">رنگ روغنی</a>
-            <a href="services/acrylic-paint.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">رنگ اکریلیک</a>
-            <a href="services/multicolor-paint.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">مولتی‌کالر</a>
-            <a href="about.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">درباره ما</a>
+        <div id="mobile-menu" class="md:hidden bg-white shadow-lg">
+            <a href="index.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50 border-b border-slate-100">خانه</a>
+            <div>
+                <button id="mobile-submenu-button" class="w-full flex justify-between items-center py-3 px-6 text-slate-700 hover:bg-blue-50 border-b border-slate-100">
+                    <span>خدمات ما</span>
+                    <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                </button>
+                <div id="mobile-submenu" class="mobile-submenu bg-slate-50">
+                    <a href="services/plastic-paint.html" class="block py-2 px-8 text-slate-600 hover:bg-blue-100">رنگ پلاستیک</a>
+                    <a href="services/oil-paint.html" class="block py-2 px-8 text-slate-600 hover:bg-blue-100">رنگ روغنی</a>
+                    <a href="services/acrylic-paint.html" class="block py-2 px-8 text-slate-600 hover:bg-blue-100">رنگ اکریلیک</a>
+                    <a href="services/multicolor-paint.html" class="block py-2 px-8 text-slate-600 hover:bg-blue-100">مولتی‌کالر</a>
+                </div>
+            </div>
+            <a href="about.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50 border-b border-slate-100">درباره ما</a>
             <a href="contact.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">تماس با ما</a>
         </div>
     </header>
 
     <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
-        <section class="bg-cover bg-center h-96" style="background-image: url('https://via.placeholder.com/1920x1080/60A5FA/FFFFFF?text=Modern+Painting')">
-            <div class="bg-black bg-opacity-40 h-full flex flex-col justify-center items-center text-white text-center px-4">
-                <h1 class="text-5xl font-bold mb-4">هنر ما، زیبایی خانه شماست</h1>
-                <p class="text-xl max-w-2xl">تیم نقاشی مدرن با ارائه خدمات حرفه‌ای و استفاده از بهترین متریال، روحی تازه به فضای شما می‌بخشد.</p>
-                <a href="contact.html" class="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">مشاوره رایگان و استعلام قیمت</a>
+        <!-- New Hero Section -->
+        <section class="relative h-[60vh] md:h-[80vh] bg-gradient-to-t from-slate-900 to-slate-700 flex items-center justify-center text-white overflow-hidden">
+            <!-- Background Image -->
+            <img src="https://images.unsplash.com/photo-1596205252494-b044c3898e72?q=80&w=1932&auto=format&fit=crop"
+                 alt="نقاشی مدرن ساختمان"
+                 class="absolute top-0 left-0 w-full h-full object-cover opacity-30 z-0">
+
+            <div class="relative z-10 text-center px-4">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-slideInUp" style="animation-delay: 0.2s;">هنر ما، زیبایی خانه شماست</h1>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 animate-slideInUp" style="animation-delay: 0.4s;">
+                    تیم نقاشی مدرن با ارائه خدمات حرفه‌ای و استفاده از بهترین متریال، روحی تازه به فضای شما می‌بخشد.
+                </p>
+                <a href="contact.html"
+                   class="inline-block mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-110 shadow-lg animate-slideInUp"
+                   style="animation-delay: 0.6s;">
+                    مشاوره رایگان و استعلام قیمت <i class="fas fa-arrow-left mr-2"></i>
+                </a>
             </div>
         </section>
 
@@ -113,6 +174,26 @@
                 </div>
             </div>
         </section>
+
+        <!-- About Us Section -->
+        <section class="py-20 bg-slate-100">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="animated-border bg-white rounded-lg shadow-lg">
+                        <h2 class="text-3xl font-bold mb-4">28 سال تجربه، 600+ پروژه موفق</h2>
+                        <p class="text-slate-600 leading-relaxed mb-6">
+                            با افتخار، بیش از دو دهه است که در زمینه نقاشی ساختمان فعالیت می‌کنیم. تجربه ما در اجرای بیش از ۶۰۰ پروژه موفق، از خانه‌های مسکونی تا مجتمع‌های تجاری، تضمین‌کننده کیفیت کار ماست. ما به هر پروژه به چشم یک اثر هنری نگاه می‌کنیم و تعهد ما، جلب رضایت کامل شماست.
+                        </p>
+                        <a href="contact.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                            با ما تماس بگیرید
+                        </a>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?q=80&w=2071&auto=format&fit=crop" alt="تیم نقاشی ساختمان" class="rounded-lg shadow-2xl w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -123,10 +204,15 @@
         </div>
     </footer>
 
-    <!-- Floating Action Button -->
-    <a href="tel:09123456789" class="md:hidden fixed bottom-4 right-4 bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg z-50">
-        <i class="fas fa-phone-alt text-2xl"></i>
-    </a>
+    <!-- New Mobile Call Button -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-sm z-50 flex justify-center">
+        <a href="tel:09123456789"
+           class="w-full text-center text-white font-bold py-4 rounded-lg bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 shadow-lg"
+           style="max-width: 370px;">
+            مشاوره رایگان
+            <span class="block text-xs font-normal">(کلیک کنید)</span>
+        </a>
+    </div>
 
     <script src="public/script.js"></script>
 </body>

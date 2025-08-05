@@ -8,60 +8,52 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap');
-        body { font-family: 'Vazirmatn', sans-serif; }
-        /* Improved Dropdown with Animation */
-        .dropdown-menu {
-            opacity: 0;
-            transform: translateY(10px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            visibility: hidden;
-        }
-        .group:hover .dropdown-menu {
-            opacity: 1;
-            transform: translateY(0);
-            visibility: visible;
-        }
+        body { font-family: 'Vazirmatn', sans-serif; overflow-x: hidden; }
+        .group:hover .dropdown-menu { opacity: 1; transform: translateY(0); visibility: visible; }
+        .dropdown-menu { opacity: 0; transform: translateY(10px); transition: opacity 0.3s ease, transform 0.3s ease; visibility: hidden; }
+        #mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
+        .mobile-submenu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-in-out; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body class="bg-slate-100 text-slate-800">
 
     <!-- Header -->
     <header class="bg-white shadow-lg sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-3xl font-bold text-blue-600">نقاشی مدرن</a>
-
-            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-8 space-x-reverse">
-                <a href="index.html" class="text-slate-600 hover:text-blue-500 transition duration-300">خانه</a>
-                <!-- Services Dropdown using group-hover -->
+                <a href="index.html" class="text-slate-600 hover:text-blue-500 transition">خانه</a>
                 <div class="relative group">
-                    <button class="text-slate-600 hover:text-blue-500 transition duration-300 flex items-center py-2">
-                        خدمات ما <i class="fas fa-chevron-down mr-2 text-xs transition-transform group-hover:rotate-180"></i>
+                    <button class="text-slate-600 hover:text-blue-500 transition flex items-center py-2">
+                        خدمات ما <i class="fas fa-chevron-down mr-2 text-xs group-hover:rotate-180"></i>
                     </button>
                     <div class="dropdown-menu absolute bg-white shadow-xl rounded-lg mt-0 py-2 w-48 z-50">
-                        <a href="services/plastic-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 transition-colors">رنگ پلاستیک</a>
-                        <a href="services/oil-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 transition-colors">رنگ روغنی</a>
-                        <a href="services/acrylic-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 transition-colors">رنگ اکریلیک</a>
-                        <a href="services/multicolor-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 transition-colors">مولتی‌کالر</a>
+                        <a href="services/plastic-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50">رنگ پلاستیک</a>
+                        <a href="services/oil-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50">رنگ روغنی</a>
+                        <a href="services/acrylic-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50">رنگ اکریلیک</a>
+                        <a href="services/multicolor-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50">مولتی‌کالر</a>
                     </div>
                 </div>
-                <a href="about.html" class="text-slate-600 hover:text-blue-500 transition duration-300">درباره ما</a>
-                <a href="contact.html" class="text-slate-600 hover:text-blue-500 transition duration-300">تماس با ما</a>
+                <a href="about.html" class="text-slate-600 hover:text-blue-500 transition">درباره ما</a>
+                <a href="contact.html" class="text-slate-600 hover:text-blue-500 transition">تماس با ما</a>
             </div>
-
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden flex items-center text-slate-600">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
+            <button id="mobile-menu-button" class="md:hidden flex items-center"><i class="fas fa-bars text-2xl"></i></button>
         </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-            <a href="index.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">خانه</a>
-            <a href="services/plastic-paint.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">رنگ پلاستیک</a>
-            <a href="services/oil-paint.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">رنگ روغنی</a>
-            <a href="services/acrylic-paint.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">رنگ اکریلیک</a>
-            <a href="services/multicolor-paint.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">مولتی‌کالر</a>
-            <a href="about.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">درباره ما</a>
+        <div id="mobile-menu" class="md:hidden bg-white shadow-lg">
+            <a href="index.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50 border-b">خانه</a>
+            <div>
+                <button id="mobile-submenu-button" class="w-full flex justify-between items-center py-3 px-6 text-slate-700 hover:bg-blue-50 border-b">
+                    <span>خدمات ما</span>
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </button>
+                <div id="mobile-submenu" class="mobile-submenu bg-slate-50">
+                    <a href="services/plastic-paint.html" class="block py-2 px-8">رنگ پلاستیک</a>
+                    <a href="services/oil-paint.html" class="block py-2 px-8">رنگ روغنی</a>
+                    <a href="services/acrylic-paint.html" class="block py-2 px-8">رنگ اکریلیک</a>
+                    <a href="services/multicolor-paint.html" class="block py-2 px-8">مولتی‌کالر</a>
+                </div>
+            </div>
+            <a href="about.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50 border-b">درباره ما</a>
             <a href="contact.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">تماس با ما</a>
         </div>
     </header>
@@ -128,7 +120,16 @@
         </div>
     </footer>
 
-    <a href="tel:09123456789" class="md:hidden fixed bottom-4 right-4 bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg z-50"><i class="fas fa-phone-alt text-2xl"></i></a>
+    <!-- New Mobile Call Button -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-sm z-50 flex justify-center">
+        <a href="tel:09123456789"
+           class="w-full text-center text-white font-bold py-4 rounded-lg bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 shadow-lg"
+           style="max-width: 370px;">
+            مشاوره رایگان
+            <span class="block text-xs font-normal">(کلیک کنید)</span>
+        </a>
+    </div>
+
     <script src="public/script.js"></script>
 </body>
 </html>
