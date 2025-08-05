@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدمات رنگ روغنی | نقاشی ساختمان مدرن</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap');
+        body { font-family: 'Vazirmatn', sans-serif; }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-menu { display: none; }
+        .faq-item .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .faq-item.open .faq-answer { max-height: 1000px; }
+        .faq-item.open .faq-icon { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="text-3xl font-bold text-blue-600">نقاشی مدرن</a>
+            <div class="hidden md:flex items-center space-x-8 space-x-reverse">
+                <a href="../index.html" class="text-slate-600 hover:text-blue-500">خانه</a>
+                <div class="relative dropdown" id="services-dropdown-container">
+                    <button id="services-dropdown-button" class="text-slate-600 hover:text-blue-500 flex items-center">
+                        خدمات ما <i class="fas fa-chevron-down mr-2 text-xs"></i>
+                    </button>
+                    <div id="services-dropdown-menu" class="dropdown-menu absolute bg-white shadow-xl rounded-lg mt-2 py-2 w-48 z-50">
+                        <a href="plastic-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50">رنگ پلاستیک</a>
+                        <a href="oil-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50">رنگ روغنی</a>
+                        <a href="acrylic-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50">رنگ اکریلیک</a>
+                        <a href="multicolor-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50">مولتی‌کالر</a>
+                    </div>
+                </div>
+                <a href="../about.html" class="text-slate-600 hover:text-blue-500">درباره ما</a>
+                <a href="../contact.html" class="text-slate-600 hover:text-blue-500">تماس با ما</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden flex items-center text-slate-600"><i class="fas fa-bars text-2xl"></i></button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+             <a href="../index.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">خانه</a>
+            <a href="plastic-paint.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">رنگ پلاستیک</a>
+            <a href="oil-paint.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">رنگ روغنی</a>
+            <a href="acrylic-paint.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">رنگ اکریلیک</a>
+            <a href="multicolor-paint.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">مولتی‌کالر</a>
+            <a href="../about.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">درباره ما</a>
+            <a href="../contact.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">تماس با ما</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Service Hero -->
+        <section class="bg-green-100 py-12">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl font-bold text-green-800">نقاشی با رنگ روغنی</h1>
+                <p class="text-lg text-green-700 mt-2">دوام، زیبایی و قابلیت شستشوی بی‌نظیر</p>
+            </div>
+        </section>
+
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-2 bg-white p-8 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold mb-4">چرا رنگ روغنی؟</h2>
+                    <p class="text-slate-600 leading-loose mb-6">رنگ روغنی از دیرباز به عنوان یکی از بهترین و بادوام‌ترین گزینه‌ها برای نقاشی درب‌ها، پنجره‌ها، چهارچوب‌ها و دیوارهایی که در معرض رطوبت یا کثیفی قرار دارند (مانند آشپزخانه و سرویس‌های بهداشتی) شناخته می‌شود. این رنگ سطحی کاملاً قابل شستشو ایجاد می‌کند و مقاومت بالایی در برابر ضربه و خراشیدگی دارد. رنگ روغنی در انواع مات، نیمه‌براق و براق موجود است که هرکدام جلوه خاص خود را دارند.</p>
+
+                    <h3 class="text-xl font-bold mb-3">مزایای کلیدی:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
+                        <li>مقاومت بسیار بالا در برابر آب و رطوبت</li>
+                        <li>قابلیت شستشوی کامل و آسان</li>
+                        <li>پوشش‌دهی فوق‌العاده و یکدست</li>
+                        <li>دوام و طول عمر بالا</li>
+                        <li>ایده‌آل برای سطوح فلزی و چوبی</li>
+                    </ul>
+
+                    <h2 class="text-2xl font-bold mb-4">گالری نمونه کارها</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                        <img src="https://via.placeholder.com/400x300/34D399/FFFFFF?text=نمونه+۱" alt="نمونه کار رنگ روغنی" class="rounded-lg shadow-md hover:opacity-80 transition-opacity">
+                        <img src="https://via.placeholder.com/400x300/6EE7B7/FFFFFF?text=نمونه+۲" alt="نمونه کار رنگ روغنی" class="rounded-lg shadow-md hover:opacity-80 transition-opacity">
+                        <img src="https://via.placeholder.com/400x300/A7F3D0/FFFFFF?text=نمونه+۳" alt="نمونه کار رنگ روغنی" class="rounded-lg shadow-md hover:opacity-80 transition-opacity">
+                    </div>
+
+                    <h2 class="text-2xl font-bold mb-4">سوالات متداول</h2>
+                    <div class="space-y-4">
+                        <div class="faq-item border-b pb-4">
+                            <button class="faq-question w-full text-right flex justify-between items-center font-semibold">
+                                <span>آیا بوی رنگ روغنی مضر است؟</span>
+                                <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                            </button>
+                            <div class="faq-answer text-slate-600 pt-2">
+                                <p>رنگ روغنی به دلیل حلال نفتی، بوی تندی دارد. توصیه می‌شود در هنگام اجرا و تا چند روز پس از آن، تهویه مناسب در محیط وجود داشته باشد. امروزه رنگ‌های روغنی بدون سرب و با کیفیت بالا تولید می‌شوند که خطرات کمتری دارند.</p>
+                            </div>
+                        </div>
+                         <div class="faq-item border-b pb-4">
+                            <button class="faq-question w-full text-right flex justify-between items-center font-semibold">
+                                <span>تفاوت رنگ روغنی مات و براق چیست؟</span>
+                                <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                            </button>
+                            <div class="faq-answer text-slate-600 pt-2">
+                                <p>رنگ براق نور را بیشتر منعکس می‌کند و ایرادات سطح را بیشتر نشان می‌دهد اما مقاومت و قابلیت شستشوی بالاتری دارد. رنگ مات نور را جذب کرده و ایرادات گچ‌کاری را بهتر پنهان می‌کند اما قابلیت شستشوی کمتری نسبت به رنگ براق دارد. رنگ نیمه‌براق گزینه‌ای متعادل بین این دو است.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <aside class="lg:col-span-1">
+                    <div class="bg-white p-6 rounded-lg shadow-md sticky top-28">
+                        <h3 class="text-xl font-bold mb-4">دریافت مشاوره</h3>
+                        <p class="text-slate-600 mb-4">برای انتخاب بهترین نوع رنگ روغنی برای فضای خود با ما مشورت کنید.</p>
+                        <a href="../contact.html" class="w-full text-center bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300 block">
+                            <i class="fas fa-phone-alt ml-2"></i> تماس با ما
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white py-10 mt-10">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 1403 نقاشی مدرن. تمام حقوق محفوظ است.</p>
+            <p class="mt-2">طراحی و توسعه با <i class="fas fa-heart text-red-500"></i></p>
+        </div>
+    </footer>
+
+    <a href="tel:09123456789" class="md:hidden fixed bottom-4 right-4 bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg z-50"><i class="fas fa-phone-alt text-2xl"></i></a>
+    <script src="../public/script.js"></script>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.closest('.faq-item');
+                faqItem.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>

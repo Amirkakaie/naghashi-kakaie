@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدمات رنگ مولتی‌کالر | نقاشی ساختمان مدرن</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap');
+        body { font-family: 'Vazirmatn', sans-serif; }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-menu { display: none; }
+        .faq-item .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .faq-item.open .faq-answer { max-height: 1000px; }
+        .faq-item.open .faq-icon { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="text-3xl font-bold text-blue-600">نقاشی مدرن</a>
+            <div class="hidden md:flex items-center space-x-8 space-x-reverse">
+                <a href="../index.html" class="text-slate-600 hover:text-blue-500">خانه</a>
+                <div class="relative dropdown" id="services-dropdown-container">
+                    <button id="services-dropdown-button" class="text-slate-600 hover:text-blue-500 flex items-center">
+                        خدمات ما <i class="fas fa-chevron-down mr-2 text-xs"></i>
+                    </button>
+                    <div id="services-dropdown-menu" class="dropdown-menu absolute bg-white shadow-xl rounded-lg mt-2 py-2 w-48 z-50">
+                        <a href="plastic-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50">رنگ پلاستیک</a>
+                        <a href="oil-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50">رنگ روغنی</a>
+                        <a href="acrylic-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50">رنگ اکریلیک</a>
+                        <a href="multicolor-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50">مولتی‌کالر</a>
+                    </div>
+                </div>
+                <a href="../about.html" class="text-slate-600 hover:text-blue-500">درباره ما</a>
+                <a href="../contact.html" class="text-slate-600 hover:text-blue-500">تماس با ما</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden flex items-center text-slate-600"><i class="fas fa-bars text-2xl"></i></button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+             <a href="../index.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">خانه</a>
+            <a href="plastic-paint.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">رنگ پلاستیک</a>
+            <a href="oil-paint.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">رنگ روغنی</a>
+            <a href="acrylic-paint.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">رنگ اکریلیک</a>
+            <a href="multicolor-paint.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">مولتی‌کالر</a>
+            <a href="../about.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">درباره ما</a>
+            <a href="../contact.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">تماس با ما</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Service Hero -->
+        <section class="bg-amber-100 py-12">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl font-bold text-amber-800">نقاشی با رنگ مولتی‌کالر</h1>
+                <p class="text-lg text-amber-700 mt-2">جلوه‌ای دکوراتیو و منحصر به فرد برای فضاهای خاص</p>
+            </div>
+        </section>
+
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-2 bg-white p-8 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold mb-4">چرا رنگ مولتی‌کالر؟</h2>
+                    <p class="text-slate-600 leading-loose mb-6">رنگ مولتی‌کالر یک پوشش تزئینی و مدرن است که از ترکیب چند رنگ مختلف در یک زمینه تشکیل شده و پس از اجرا، بافتی زیبا و چندرنگ ایجاد می‌کند. این رنگ‌ها به دلیل ضخامت و بافت خاص خود، ایرادات جزئی سطح دیوار را به خوبی می‌پوشانند. همچنین به دلیل خاصیت آنتی‌استاتیک، گرد و غبار را جذب نمی‌کنند و برای فضاهای پرتردد مانند راه‌پله‌ها، لابی‌ها، ادارات و مراکز تجاری بسیار مناسب هستند.</p>
+
+                    <h3 class="text-xl font-bold mb-3">مزایای کلیدی:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
+                        <li>ایجاد جلوه‌ای دکوراتیو و زیبا</li>
+                        <li>پوشاندن ایرادات سطح دیوار</li>
+                        <li>مقاومت در برابر گرد و غبار و دوده</li>
+                        <li>سرعت اجرای بالا با استفاده از اسپری</li>
+                        <li>تنوع در طرح و رنگ</li>
+                    </ul>
+
+                    <h2 class="text-2xl font-bold mb-4">گالری نمونه کارها</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                        <img src="https://via.placeholder.com/400x300/FBBF24/FFFFFF?text=نمونه+۱" alt="نمونه کار رنگ مولتی‌کالر" class="rounded-lg shadow-md hover:opacity-80 transition-opacity">
+                        <img src="https://via.placeholder.com/400x300/F59E0B/FFFFFF?text=نمونه+۲" alt="نمونه کار رنگ مولتی‌کالر" class="rounded-lg shadow-md hover:opacity-80 transition-opacity">
+                        <img src="https://via.placeholder.com/400x300/D97706/FFFFFF?text=نمونه+۳" alt="نمونه کار رنگ مولتی‌کالر" class="rounded-lg shadow-md hover:opacity-80 transition-opacity">
+                    </div>
+
+                    <h2 class="text-2xl font-bold mb-4">سوالات متداول</h2>
+                    <div class="space-y-4">
+                        <div class="faq-item border-b pb-4">
+                            <button class="faq-question w-full text-right flex justify-between items-center font-semibold">
+                                <span>آیا رنگ مولتی‌کالر قابل ترمیم است؟</span>
+                                <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                            </button>
+                            <div class="faq-answer text-slate-600 pt-2">
+                                <p>بله، یکی از مزایای رنگ مولتی‌کالر قابلیت ترمیم پذیری آن است. در صورت آسیب دیدن بخشی از دیوار، می‌توان همان قسمت را به راحتی و بدون اینکه تفاوت زیادی با بقیه سطح داشته باشد، ترمیم کرد.</p>
+                            </div>
+                        </div>
+                         <div class="faq-item border-b pb-4">
+                            <button class="faq-question w-full text-right flex justify-between items-center font-semibold">
+                                <span>آیا اجرای این رنگ نیاز به تخصص دارد؟</span>
+                                <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                            </button>
+                            <div class="faq-answer text-slate-600 pt-2">
+                                <p>بله، رنگ مولتی‌کالر توسط دستگاه اسپری مخصوص اجرا می‌شود و برای دستیابی به یک نتیجه یکنواخت و زیبا، نیاز به مهارت و تجربه اپراتور دارد. تیم ما از متخصصین آموزش‌دیده برای این کار استفاده می‌کند.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <aside class="lg:col-span-1">
+                    <div class="bg-white p-6 rounded-lg shadow-md sticky top-28">
+                        <h3 class="text-xl font-bold mb-4">دریافت مشاوره</h3>
+                        <p class="text-slate-600 mb-4">برای ایجاد یک فضای منحصر به فرد با ما تماس بگیرید.</p>
+                        <a href="../contact.html" class="w-full text-center bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300 block">
+                            <i class="fas fa-phone-alt ml-2"></i> تماس با ما
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white py-10 mt-10">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 1403 نقاشی مدرن. تمام حقوق محفوظ است.</p>
+            <p class="mt-2">طراحی و توسعه با <i class="fas fa-heart text-red-500"></i></p>
+        </div>
+    </footer>
+
+    <a href="tel:09123456789" class="md:hidden fixed bottom-4 right-4 bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg z-50"><i class="fas fa-phone-alt text-2xl"></i></a>
+    <script src="../public/script.js"></script>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.closest('.faq-item');
+                faqItem.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>
