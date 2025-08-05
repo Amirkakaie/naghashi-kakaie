@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="اجرای رنگ مولتی‌کالر برای ایجاد جلوه‌ای دکوراتیو و منحصر به فرد. پوششی زیبا و مقاوم برای فضاهای خاص، لابی‌ها و ادارات.">
-    <meta name="keywords" content="رنگ مولتی کالر, نقاشی دکوراتیو, رنگ بافت دار, نقاشی لابی, پوشش تزئینی دیوار">
     <title>خدمات رنگ مولتی‌کالر | نقاشی ساختمان مدرن</title>
-    <link href="../dist/style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap');
@@ -42,7 +40,6 @@
                     </div>
                 </div>
                 <a href="../gallery.html" class="text-slate-600 hover:text-blue-500 transition">گالری</a>
-                <a href="../blog.html" class="text-slate-600 hover:text-blue-500 transition">وبلاگ</a>
                 <a href="../about.html" class="text-slate-600 hover:text-blue-500 transition">درباره ما</a>
                 <a href="../contact.html" class="text-slate-600 hover:text-blue-500 transition">تماس با ما</a>
             </div>
@@ -63,7 +60,6 @@
                 </div>
             </div>
             <a href="../gallery.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50 border-b">گالری</a>
-            <a href="../blog.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50 border-b">وبلاگ</a>
             <a href="../about.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50 border-b">درباره ما</a>
             <a href="../contact.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">تماس با ما</a>
         </div>
@@ -206,9 +202,31 @@
     </footer>
 
     <div class="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-sm z-50 flex justify-center">
-        <a href="tel:09190675003" class="w-full text-center text-white font-bold py-4 rounded-lg bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 shadow-lg" style="max-width: 370px;">دریافت مشاوره فوری و رایگان</a>
+        <a href="tel:09123456789" class="w-full text-center text-white font-bold py-4 rounded-lg bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 shadow-lg" style="max-width: 370px;">دریافت مشاوره فوری و رایگان</a>
     </div>
 
     <script src="../public/script.js"></script>
+    <script>
+        // Scroll & FAQ Logic
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.closest('.faq-item');
+                faqItem.classList.toggle('open');
+            });
+        });
+    </script>
 </body>
 </html>
