@@ -1,24 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dist/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    
-    <title>نقاشی ساختمان هنر </title>
-    <meta name="discription" content="با طراحی های حرفه ای مناسب برای هر خانه ای در تهران">
+    <title>نقاشی ساختمان مدرن | صفحه اصلی</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* A simple font for Persian text */
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-blue-600">نقاشی مدرن</a>
+            <div class="hidden md:flex space-x-8 space-x-reverse">
+                <a href="index.html" class="text-gray-600 hover:text-blue-500">خانه</a>
+                <a href="about.html" class="text-gray-600 hover:text-blue-500">درباره ما</a>
+                <a href="contact.html" class="text-gray-600 hover:text-blue-500">تماس با ما</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden flex items-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
+            <a href="index.html" class="block py-2 text-gray-600 hover:text-blue-500">خانه</a>
+            <a href="about.html" class="block py-2 text-gray-600 hover:text-blue-500">درباره ما</a>
+            <a href="contact.html" class="block py-2 text-gray-600 hover:text-blue-500">تماس با ما</a>
+        </div>
+    </header>
 
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-blue-600 text-white">
+            <div class="container mx-auto px-6 py-20 text-center">
+                <h1 class="text-4xl font-bold mb-4">کیفیت و زیبایی را به خانه شما می‌آوریم</h1>
+                <p class="text-lg mb-8">ارائه کلیه خدمات نقاشی ساختمان با بهترین کیفیت و قیمت مناسب</p>
+                <a href="#services" class="bg-white text-blue-600 font-bold py-2 px-6 rounded-full hover:bg-gray-200 transition duration-300">مشاهده خدمات</a>
+            </div>
+        </section>
 
+        <!-- Services Section -->
+        <section id="services" class="py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">خدمات ما</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Service 1: Plastic Paint -->
+                    <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl transition-shadow">
+                        <h3 class="text-xl font-bold mb-2">رنگ پلاستیک</h3>
+                        <p class="text-gray-600 mb-4">اقتصادی و سریع، مناسب برای سقف و دیوارهای داخلی.</p>
+                        <a href="plastic-paint.html" class="text-blue-600 font-bold hover:underline">بیشتر بدانید &larr;</a>
+                    </div>
+                    <!-- Service 2: Oil Paint -->
+                    <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl transition-shadow">
+                        <h3 class="text-xl font-bold mb-2">رنگ روغنی</h3>
+                        <p class="text-gray-600 mb-4">بادوام و قابل شستشو، ایده‌آل برای درب و پنجره.</p>
+                        <a href="oil-paint.html" class="text-blue-600 font-bold hover:underline">بیشتر بدانید &larr;</a>
+                    </div>
+                    <!-- Service 3: Acrylic Paint -->
+                    <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl transition-shadow">
+                        <h3 class="text-xl font-bold mb-2">رنگ اکریلیک</h3>
+                        <p class="text-gray-600 mb-4">بدون بو، دوام بالا و دوست‌دار محیط زیست.</p>
+                        <a href="acrylic-paint.html" class="text-blue-600 font-bold hover:underline">بیشتر بدانید &larr;</a>
+                    </div>
+                    <!-- Service 4: Multicolor Paint -->
+                    <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl transition-shadow">
+                        <h3 class="text-xl font-bold mb-2">مولتی‌کالر</h3>
+                        <p class="text-gray-600 mb-4">دکوراتیو و مدرن، بافت و طرح‌های خاص و زیبا.</p>
+                        <a href="multicolor-paint.html" class="text-blue-600 font-bold hover:underline">بیشتر بدانید &larr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- About Us Section -->
+        <section id="about" class="bg-gray-100 py-16">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-6">درباره نقاشی مدرن</h2>
+                <p class="max-w-3xl mx-auto text-lg text-gray-700 mb-8">
+                    ما با سال‌ها تجربه و تیمی از نقاشان حرفه‌ای، متعهد به ارائه بهترین خدمات نقاشی ساختمان هستیم. هدف ما جلب رضایت شما با ارائه کاری با کیفیت، تمیز و در زمان مقرر است.
+                </p>
+                <a href="about.html" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition duration-300">اطلاعات بیشتر</a>
+            </div>
+        </section>
 
+        <!-- Contact Us Section -->
+        <section id="contact" class="py-16">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-6">با ما در تماس باشید</h2>
+                <p class="text-lg text-gray-700 mb-8">برای مشاوره رایگان و دریافت قیمت با ما تماس بگیرید.</p>
+                <div class="text-xl font-semibold">
+                    <p class="mb-2">شماره تماس: <a href="tel:09123456789" class="text-blue-600">0912-345-6789</a></p>
+                </div>
+                <div class="mt-8">
+                    <a href="contact.html" class="bg-gray-800 text-white font-bold py-3 px-8 rounded-lg hover:bg-gray-900 transition duration-300">فرم تماس با ما</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-10">
+        <div class="container mx-auto px-6 py-4 text-center">
+            <p>&copy; 1403 نقاشی مدرن. تمام حقوق محفوظ است.</p>
+        </div>
+    </footer>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-    
+    <script src="public/script.js"></script>
 </body>
 </html>

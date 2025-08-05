@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تماس با ما | نقاشی ساختمان مدرن</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-blue-600">نقاشی مدرن</a>
+            <div class="hidden md:flex space-x-8 space-x-reverse">
+                <a href="index.html" class="text-gray-600 hover:text-blue-500">خانه</a>
+                <a href="about.html" class="text-gray-600 hover:text-blue-500">درباره ما</a>
+                <a href="contact.html" class="text-gray-600 hover:text-blue-500">تماس با ما</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden flex items-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
+            <a href="index.html" class="block py-2 text-gray-600 hover:text-blue-500">خانه</a>
+            <a href="about.html" class="block py-2 text-gray-600 hover:text-blue-500">درباره ما</a>
+            <a href="contact.html" class="block py-2 text-gray-600 hover:text-blue-500">تماس با ما</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <h1 class="text-3xl font-bold text-center mb-8">تماس با ما</h1>
+        <div class="bg-white p-8 rounded-lg shadow-md max-w-lg mx-auto">
+            <div class="space-y-4">
+                <p><strong>شماره تماس:</strong> <a href="tel:09123456789" class="text-blue-600 hover:underline">0912-345-6789</a></p>
+                <p><strong>ایمیل:</strong> <a href="mailto:info@naghashi-modern.com" class="text-blue-600 hover:underline">info@naghashi-modern.com</a></p>
+                <p><strong>آدرس:</strong> تهران، خیابان اصلی، کوچه فرعی، پلاک ۱۰</p>
+            </div>
+            <div class="mt-8 border-t pt-6">
+                 <h2 class="text-2xl font-bold text-center mb-4">برای ما پیام بگذارید</h2>
+                 <form action="#" method="POST">
+                     <div class="mb-4">
+                         <label for="name" class="block text-gray-700 font-bold mb-2">نام شما</label>
+                         <input type="text" id="name" name="name" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                     </div>
+                     <div class="mb-4">
+                         <label for="email" class="block text-gray-700 font-bold mb-2">ایمیل</label>
+                         <input type="email" id="email" name="email" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                     </div>
+                     <div class="mb-4">
+                         <label for="message" class="block text-gray-700 font-bold mb-2">پیام شما</label>
+                         <textarea id="message" name="message" rows="5" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                     </div>
+                     <div class="text-center">
+                         <button type="submit" class="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-300">ارسال پیام</button>
+                     </div>
+                 </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-10">
+        <div class="container mx-auto px-6 py-4 text-center">
+            <p>&copy; 1403 نقاشی مدرن. تمام حقوق محفوظ است.</p>
+        </div>
+    </footer>
+
+    <script src="public/script.js"></script>
+</body>
+</html>
