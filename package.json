@@ -1,21 +1,20 @@
 {
-  "devDependencies": {
-    "daisyui": "^5.0.43"
-  },
-  "dependencies": {
-    "@tailwindcss/cli": "^4.1.8",
-    "express": "^5.1.0",
-    "tailwindcss": "^4.1.8"
-  },
   "name": "naghshi",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "build": "npx @tailwindcss/cli -i ./src/tailwind.css -o ./dist/style.css",
     "start": "node server.js",
-    "dev": "npx @tailwindcss/cli -i ./src/tailwind.css -o ./dist/style.css --watch"
-}
-
+    "dev": "npx @tailwindcss/cli -i ./src/tailwind.css -o ./dist/style.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.8",
+    "express": "^5.1.0",
+    "tailwindcss": "^4.1.8"
+  },
+  "devDependencies": {
+    "daisyui": "^5.0.43"
   },
   "author": "",
   "license": "ISC",
