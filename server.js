@@ -24,7 +24,19 @@ app.post('/api/contact', (req, res) => {
             return res.status(500).json({ message: 'Error reading messages file.' });
         }
 
-        const messages = (err || !data) ? [] : JSON.parse(data);
+        let messages = [];
+        if (!err && data) {
+            try {
+                const parsedData = JSON.parse(data);
+                // Make sure we have an array, in case the file is corrupt in a weird way
+                if (Array.isArray(parsedData)) {
+                    messages = parsedData;
+                }
+            } catch (e) {
+                console.error("Error parsing messages.json. Starting fresh.", e);
+            }
+        }
+
         const newMessage = {
             id: Date.now(),
             date: new Date().toISOString(),
@@ -46,7 +58,19 @@ app.get('/api/messages', (req, res) => {
         if (err && err.code !== 'ENOENT') {
             return res.status(500).json({ message: 'Error reading messages file.' });
         }
-        const messages = (err || !data) ? [] : JSON.parse(data);
+
+        let messages = [];
+        if (!err && data) {
+            try {
+                const parsedData = JSON.parse(data);
+                if (Array.isArray(parsedData)) {
+                    messages = parsedData;
+                }
+            } catch (e) {
+                console.error("Error parsing messages.json. Returning empty list.", e);
+            }
+        }
+
         res.json(messages.sort((a, b) => b.id - a.id)); // Sort by most recent
     });
 });
