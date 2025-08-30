@@ -61,53 +61,12 @@
         #mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
         .mobile-submenu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-in-out; }
     </style>
+    <?php include("../components/script-for-all.php")?>
 </head>
 <body class="bg-slate-100 text-slate-800">
 
     <!-- Header -->
-    <header class="bg-white shadow-lg sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-bold text-blue-600">نقاشی مدرن</a>
-            <div class="hidden md:flex items-center space-x-8 space-x-reverse">
-                <a href="index.html" class="text-slate-600 hover:text-blue-500 transition">خانه</a>
-                <div class="relative group">
-                    <button class="text-slate-600 hover:text-blue-500 transition flex items-center py-2">
-                        خدمات ما <i class="fas fa-chevron-down mr-2 text-xs group-hover:rotate-180"></i>
-                    </button>
-                    <div class="dropdown-menu absolute bg-white shadow-xl rounded-lg mt-0 py-2 w-48 z-50">
-                        <a href="services/plastic-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50">رنگ پلاستیک</a>
-                        <a href="services/oil-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50">رنگ روغنی</a>
-                        <a href="services/acrylic-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50">رنگ اکریلیک</a>
-                        <a href="services/multicolor-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50">مولتی‌کالر</a>
-                    </div>
-                </div>
-                <a href="gallery.html" class="text-slate-600 hover:text-blue-500 transition">گالری</a>
-                <a href="blog/index.html" class="text-slate-600 hover:text-blue-500 transition duration-300">وبلاگ</a>
-                <a href="about.html" class="text-slate-600 hover:text-blue-500 transition">درباره ما</a>
-                <a href="contact.html" class="text-slate-600 hover:text-blue-500 transition">تماس با ما</a>
-            </div>
-            <button id="mobile-menu-button" class="md:hidden flex items-center"><i class="fas fa-bars text-2xl"></i></button>
-        </nav>
-        <div id="mobile-menu" class="md:hidden bg-white shadow-lg">
-            <a href="index.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50 border-b">خانه</a>
-            <div>
-                <button id="mobile-submenu-button" class="w-full flex justify-between items-center py-3 px-6 text-slate-700 hover:bg-blue-50 border-b">
-                    <span>خدمات ما</span>
-                    <i class="fas fa-chevron-down text-xs"></i>
-                </button>
-                <div id="mobile-submenu" class="mobile-submenu bg-slate-50">
-                    <a href="services/plastic-paint.html" class="block py-2 px-8">رنگ پلاستیک</a>
-                    <a href="services/oil-paint.html" class="block py-2 px-8">رنگ روغنی</a>
-                    <a href="services/acrylic-paint.html" class="block py-2 px-8">رنگ اکریلیک</a>
-                    <a href="services/multicolor-paint.html" class="block py-2 px-8">مولتی‌کالر</a>
-                </div>
-            </div>
-            <a href="gallery.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50 border-b">گالری</a>
-            <a href="blog/index.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50 border-b border-slate-100">وبلاگ</a>
-            <a href="about.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50 border-b">درباره ما</a>
-            <a href="contact.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">تماس با ما</a>
-        </div>
-    </header>
+    <?php include("../components/header.php")?>
 
     <!-- Main Content -->
     <main class="py-16">
@@ -180,21 +139,10 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-800 text-white py-10 mt-10">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 1403 نقاشی مدرن. تمام حقوق محفوظ است.</p>
-            <p class="mt-2">طراحی و توسعه با <i class="fas fa-heart text-red-500"></i></p>
-        </div>
-    </footer>
+    <?php include("../components/footer.php")?>
 
-    <div class="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-sm z-50 flex justify-center">
-        <a href="tel:09190675003"
-           class="w-full text-center text-white font-bold py-4 rounded-lg bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 shadow-lg"
-           style="max-width: 370px;">
-            دریافت مشاوره فوری و رایگان
-        </a>
-    </div>
+    <?php include("../components/shomareh.php")?>
 
-    <script src="public/script.js"></script>
+    <script src="../public/script.js"></script>
 </body>
 </html>

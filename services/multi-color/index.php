@@ -22,73 +22,7 @@
     <meta name="twitter:description" content="اجرای رنگ مولتی کالر دکوراتیو و مدرن برای لابی، راهرو و فضاهای اداری. پوشش آنتی استاتیک و مقاوم در برابر گرد و غبار.">
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1595334493673-0438a6a1d447?q=80&w=800">
 
-    <!-- Schema.org markup -->
-    <script type="application/ld+json">
-    [
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [{
-          "@type": "ListItem",
-          "position": 1,
-          "name": "خانه",
-          "item": "https://your-domain.com/index.html"
-        },{
-          "@type": "ListItem",
-          "position": 2,
-          "name": "خدمات ما",
-          "item": "https://your-domain.com/index.html#services"
-        },{
-          "@type": "ListItem",
-          "position": 3,
-          "name": "رنگ مولتی‌کالر"
-        }]
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "خدمات رنگ مولتی‌کالر دکوراتیو",
-        "image": "https://images.unsplash.com/photo-1595334493673-0438a6a1d447?q=80&w=800",
-        "description": "پوشش تزئینی و مدرن مولتی‌کالر با بافت زیبا و چندرنگ. ضد گرد و غبار و مناسب برای فضاهای پرتردد.",
-        "provider": {
-          "@type": "LocalBusiness",
-          "name": "نقاشی مدرن",
-          "telephone": "+989190675003",
-          "areaServed": [
-            { "@type": "AdministrativeArea", "name": "تهران" },
-            { "@type": "AdministrativeArea", "name": "البرز" }
-          ]
-        },
-        "serviceType": "رنگ مولتی‌کالر"
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [{
-          "@type": "Question",
-          "name": "آیا رنگ مولتی‌کالر قابل ترمیم است؟",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "بله، یکی از مزایای رنگ مولتی‌کالر قابلیت ترمیم پذیری آن است. در صورت آسیب دیدن بخشی از دیوار، می‌توان همان قسمت را به راحتی و بدون اینکه تفاوت زیادی با بقیه سطح داشته باشد، ترمیم کرد."
-          }
-        },{
-          "@type": "Question",
-          "name": "آیا اجرای این رنگ نیاز به تخصص دارد؟",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "بله، رنگ مولتی‌کالر توسط دستگاه اسپری مخصوص اجرا می‌شود و برای دستیابی به یک نتیجه یکنواخت و زیبا، نیاز به مهارت و تجربه اپراتور دارد. تیم ما از متخصصین آموزش‌دیده برای این کار استفاده می‌کند."
-          }
-        },{
-          "@type": "Question",
-          "name": "این رنگ برای چه فضاهایی مناسب‌تر است؟",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "به دلیل مقاومت بالا در برابر گرد و غبار و قابلیت ترمیم، این رنگ برای فضاهای پرتردد مانند لابی هتل‌ها، راه‌پله‌ها، پارکینگ‌ها، بیمارستان‌ها و مراکز اداری و تجاری گزینه‌ای ایده‌آل است."
-          }
-        }]
-      }
-    ]
-    </script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
@@ -104,53 +38,13 @@
         .reveal { opacity: 0; transform: translateY(50px); transition: opacity 0.8s, transform 0.8s; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
     </style>
+    <?php include("../../components/script-for-all.php")?>
+    <script type="application/ld+json" src="../../components/shema/multi-color/shema.js"></script>
 </head>
 <body class="bg-slate-100 text-slate-800">
 
     <!-- Header -->
-    <header class="bg-white shadow-lg sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../index.html" class="text-3xl font-bold text-blue-600">نقاشی مدرن</a>
-            <div class="hidden md:flex items-center space-x-8 space-x-reverse">
-                <a href="../index.html" class="text-slate-600 hover:text-blue-500 transition">خانه</a>
-                <div class="relative group">
-                    <button class="text-slate-600 hover:text-blue-500 transition flex items-center py-2">
-                        خدمات ما <i class="fas fa-chevron-down mr-2 text-xs group-hover:rotate-180"></i>
-                    </button>
-                    <div class="dropdown-menu absolute bg-white shadow-xl rounded-lg mt-0 py-2 w-48 z-50">
-                        <a href="plastic-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50">رنگ پلاستیک</a>
-                        <a href="oil-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50">رنگ روغنی</a>
-                        <a href="acrylic-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50">رنگ اکریلیک</a>
-                        <a href="multicolor-paint.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50">مولتی‌کالر</a>
-                    </div>
-                </div>
-                <a href="../gallery.html" class="text-slate-600 hover:text-blue-500 transition">گالری</a>
-                <a href="../blog/index.html" class="text-slate-600 hover:text-blue-500 transition">وبلاگ</a>
-                <a href="../about.html" class="text-slate-600 hover:text-blue-500 transition">درباره ما</a>
-                <a href="../contact.html" class="text-slate-600 hover:text-blue-500 transition">تماس با ما</a>
-            </div>
-            <button id="mobile-menu-button" class="md:hidden flex items-center"><i class="fas fa-bars text-2xl"></i></button>
-        </nav>
-        <div id="mobile-menu" class="md:hidden bg-white shadow-lg">
-            <a href="../index.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50 border-b">خانه</a>
-            <div>
-                <button id="mobile-submenu-button" class="w-full flex justify-between items-center py-3 px-6 text-slate-700 hover:bg-blue-50 border-b">
-                    <span>خدمات ما</span>
-                    <i class="fas fa-chevron-down text-xs"></i>
-                </button>
-                <div id="mobile-submenu" class="mobile-submenu bg-slate-50">
-                    <a href="plastic-paint.html" class="block py-2 px-8">رنگ پلاستیک</a>
-                    <a href="oil-paint.html" class="block py-2 px-8">رنگ روغنی</a>
-                    <a href="acrylic-paint.html" class="block py-2 px-8">رنگ اکریلیک</a>
-                    <a href="multicolor-paint.html" class="block py-2 px-8">مولتی‌کالر</a>
-                </div>
-            </div>
-            <a href="../gallery.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50 border-b">گالری</a>
-            <a href="../blog/index.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50 border-b">وبلاگ</a>
-            <a href="../about.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50 border-b">درباره ما</a>
-            <a href="../contact.html" class="block py-3 px-6 text-slate-700 hover:bg-blue-50">تماس با ما</a>
-        </div>
-    </header>
+    <?php include ("../../components/header.php")?>
 
     <!-- Main Content -->
     <main>
@@ -242,14 +136,7 @@
                         </div>
                     </section>
 
-                    <section class="reveal">
-                        <h2 class="text-3xl font-bold mb-6 text-center text-slate-800">گالری نمونه کارهای مولتی‌کالر</h2>
-                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                            <img src="https://images.unsplash.com/photo-1595334493673-0438a6a1d447?q=80&w=800" alt="دیوار با بافت مولتی کالر" class="rounded-lg shadow-xl object-cover w-full h-64 transition-transform hover:scale-105">
-                            <img src="https://images.unsplash.com/photo-1621264448270-9ef006852a32?q=80&w=800" alt="راهرو با رنگ مولتی کالر" class="rounded-lg shadow-xl object-cover w-full h-64 transition-transform hover:scale-105">
-                            <img src="https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?q=80&w=800" alt="لابی با پوشش مولتی کالر" class="rounded-lg shadow-xl object-cover w-full h-64 transition-transform hover:scale-105">
-                        </div>
-                    </section>
+                    <?php include("../../components/gallery-nemone.php")?>
 
                     <section class="reveal bg-white p-8 rounded-xl shadow-lg">
                         <h2 class="text-3xl font-bold mb-6 text-center text-slate-800">سوالات متداول</h2>
@@ -260,31 +147,7 @@
                         </div>
                     </section>
 
-                    <section class="reveal">
-                        <h2 class="text-3xl font-bold mb-6 text-center text-slate-800">نظرات مشتریان ما</h2>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div class="bg-white p-6 rounded-lg shadow-lg">
-                                <p class="text-slate-600 mb-4">"برای لابی ساختمان از رنگ مولتی‌کالر استفاده کردیم و واقعا ظاهر شیک و مدرنی پیدا کرد. دیگه نگران کثیف شدن دیوارها نیستیم."</p>
-                                <div class="flex items-center">
-                                    <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="رضا احمدی" class="w-10 h-10 rounded-full object-cover">
-                                    <div class="mr-4">
-                                        <h4 class="font-bold">رضا احمدی</h4>
-                                        <p class="text-sm text-slate-500">مدیر ساختمان</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="bg-white p-6 rounded-lg shadow-lg">
-                                <p class="text-slate-600 mb-4">"فکر نمی‌کردم پارکینگ بتونه اینقدر زیبا بشه. رنگ مولتی‌کالر هم مقاومه و هم ظاهر فوق‌العاده‌ای داره. ممنون از تیم حرفه‌ای شما."</p>
-                                <div class="flex items-center">
-                                    <img src="https://i.pravatar.cc/150?u=a042581f4e29026704e" alt="مریم حسینی" class="w-10 h-10 rounded-full object-cover">
-                                    <div class="mr-4">
-                                        <h4 class="font-bold">مریم حسینی</h4>
-                                        <p class="text-sm text-slate-500">مجتمع مسکونی</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    <?php include("../../components/nazar.php")?>
 
                     <section class="reveal text-center bg-amber-600 text-white p-10 rounded-xl shadow-lg">
                         <h2 class="text-3xl font-bold mb-4">آماده‌اید فضای خود را متحول کنید؟</h2>
@@ -293,31 +156,16 @@
                     </section>
                 </div>
 
-                <aside class="lg:col-span-1">
-                    <div class="sticky top-28 bg-white p-8 rounded-xl shadow-lg reveal">
-                        <h3 class="text-2xl font-bold mb-4">نیاز به مشاوره دارید؟</h3>
-                        <p class="text-slate-600 mb-6">کارشناسان ما آماده‌اند تا بهترین راهکار را متناسب با نیاز شما ارائه دهند.</p>
-                        <a href="../contact.html" class="w-full text-center bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300 block">
-                            <i class="fas fa-headset ml-2"></i> تماس برای مشاوره رایگان
-                        </a>
-                    </div>
-                </aside>
+                <?php include("../../components/service-aside.php")?>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-800 text-white py-10 mt-10">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 1403 نقاشی مدرن. تمام حقوق محفوظ است.</p>
-            <p class="mt-2">طراحی و توسعه با <i class="fas fa-heart text-red-500"></i></p>
-        </div>
-    </footer>
+    <?php include("../../components/footer.php")?>
 
-    <div class="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-sm z-50 flex justify-center">
-        <a href="tel:09190675003" class="w-full text-center text-white font-bold py-4 rounded-lg bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 shadow-lg" style="max-width: 370px;">دریافت مشاوره فوری و رایگان</a>
-    </div>
+    <?php include("../../components/shomareh.php")?>
 
-    <script src="../public/script.js"></script>
+    <script src="../../public/script.js"></script>
 </body>
 </html>
